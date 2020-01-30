@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">AndroidLabOne</string>
+    <string name="titleTextView">Title 1</string>
+    <string name="createBtn">Create</string>
+    <string name="title_activity_view_to_do">ViewToDoActivity</string>
+</resources>

@@ -7,65 +7,65 @@
     tools:context=".UpdateToDoActivity">
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/inUpdateTitle"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:gravity="center"
-        android:text="TextView"
+        android:text="@string/titleTextView"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/editText5"
-        app:layout_constraintEnd_toStartOf="@+id/editText5"
+        app:layout_constraintBottom_toBottomOf="@+id/newTitle"
+        app:layout_constraintEnd_toStartOf="@+id/newTitle"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editText5" />
+        app:layout_constraintTop_toTopOf="@+id/newTitle" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/newTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="The title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textView7"
+        app:layout_constraintStart_toEndOf="@+id/inUpdateTitle"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/inUpdateContent"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:gravity="center"
-        android:text="TextView"
+        android:text="The Content"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/editText6"
-        app:layout_constraintEnd_toStartOf="@+id/editText6"
+        app:layout_constraintBottom_toBottomOf="@+id/newContent"
+        app:layout_constraintEnd_toStartOf="@+id/newContent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editText6" />
+        app:layout_constraintTop_toTopOf="@+id/newContent" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/newContent"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="Write new content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/editText5" />
+        app:layout_constraintStart_toEndOf="@+id/inUpdateContent"
+        app:layout_constraintTop_toBottomOf="@+id/newTitle" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/saveBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="Button"
+        android:text="Save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText6" />
+        app:layout_constraintTop_toBottomOf="@+id/newContent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

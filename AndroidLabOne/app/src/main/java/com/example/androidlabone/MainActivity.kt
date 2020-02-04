@@ -34,13 +34,13 @@ class MainActivity : AppCompatActivity() {
 
         listView.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
             val intent = Intent(this,ViewToDoActivity::class.java);
-            val passToDoId = id
-            intent.putExtra("id", passToDoId)
 
+            val passToDo = parent.getItemAtPosition(position) as ToDo
+            intent.putExtra("id", passToDo.id)
             startActivity(intent)
         }
 
-        val createBtn = findViewById<Button>(R.id.btnOnMain)
+        val createBtn = findViewById<Button>(R.id.btnOnMain) as Button
         createBtn.setOnClickListener {
             val intent = Intent(this,CreateToDoActivity::class.java)
             startActivity(intent)

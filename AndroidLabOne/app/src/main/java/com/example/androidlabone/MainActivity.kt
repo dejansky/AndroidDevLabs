@@ -16,22 +16,28 @@ import java.text.FieldPosition
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var adapter:ArrayAdapter<ToDo>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         val listView = this.findViewById<ListView>(R.id.mainListView)
-
-        listView.adapter = ArrayAdapter<ToDo>(
+        adapter = ArrayAdapter<ToDo>(
             this,
             android.R.layout.simple_list_item_1,
             android.R.id.text1,
             toDoRepository.getAllToDos()
         )
 
+        listView.adapter = adapter
+
         listView.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
-                 val intent = Intent(this,ViewToDoActivity::class.java);
-                 startActivity(intent)
+            val intent = Intent(this,ViewToDoActivity::class.java);
+            val passToDoId = id
+            intent.putExtra("id", passToDoId)
+
+            startActivity(intent)
         }
 
         val createBtn = findViewById<Button>(R.id.btnOnMain)
@@ -43,8 +49,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-
-
+        adapter.notifyDataSetChanged()
 
     }
 

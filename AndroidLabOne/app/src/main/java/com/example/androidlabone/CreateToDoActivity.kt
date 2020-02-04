@@ -12,16 +12,18 @@ class CreateToDoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_to_do)
 
-        val title = findViewById<EditText>(
-            R.id.enterTitleOnCreate
-        ).editableText.toString()
 
-        val content = this.findViewById<EditText>(
-            R.id.enterContentOnCreate
-        ).editableText.toString()
 
-        val createBtn = findViewById<Button>(R.id.btnOnCreate)
+        val createBtn = findViewById<Button>(R.id.btnOnCreate) as Button
         createBtn.setOnClickListener {
+            val title = findViewById<EditText>(
+                R.id.enterTitleOnCreate
+            ).editableText.toString()
+
+            val content = this.findViewById<EditText>(
+                R.id.enterContentOnCreate
+            ).editableText.toString()
+
             toDoRepository.addToDo(title,content);
             finish()
         }

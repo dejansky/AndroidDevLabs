@@ -31,15 +31,30 @@ class UpdateToDoActivity : AppCompatActivity() {
 
         newTitle.addTextChangedListener(object: TextWatcher{
             override fun afterTextChanged(s: Editable?) {
-                
+                if (newContent.text.isEmpty()) saveBtn.isEnabled = false
             }
 
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-
+                saveBtn.isEnabled = false
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                saveBtn.isEnabled = s.toString().trim() != ""
+                saveBtn.isEnabled = !s.isNullOrBlank()
+            }
+        })
+
+        newContent.addTextChangedListener(object: TextWatcher{
+            override fun afterTextChanged(s: Editable?) {
+                if (newTitle.text.isEmpty()) saveBtn.isEnabled = false
+
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                saveBtn.isEnabled = false
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                saveBtn.isEnabled = !s.isNullOrBlank()
             }
         })
 

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AndroidLabOne</string>
+    <string name="content_create_string">Innehåll</string>
+    <string name="content_hint_string">Skriv innehåll</string>
+    <string name="create_button_sting">Skapa</string>
+    <string name="delete_button_string">Ta bort</string>
+    <string name="save_button_string">Spara</string>
+    <string name="title_create_string">Titel</string>
+    <string name="title_hint_string">Ange titel</string>
+    <string name="update_button_string">Uppdatera</string>
+    <string name="dialog_title">Ta bort</string>
+    <string name="dialog_positive">Ja</string>
+    <string name="dialog_negative">Nej</string>
+    <string name="dialog_message">Är du säker på att du vill ta bort ? </string>
+</resources>

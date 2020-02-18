@@ -16,23 +16,38 @@ class CreateToDoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_to_do)
 
-
-
         val createBtn = findViewById<Button>(R.id.btnOnCreate)
+        createBtn.isEnabled = false
 
         enterTitleOnCreate.addTextChangedListener(object: TextWatcher{
             override fun afterTextChanged(s: Editable?) {
+                if (enterContentOnCreate.text.isEmpty()) createBtn.isEnabled = false
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                createBtn.isEnabled = false
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                createBtn.isEnabled = !s.isNullOrBlank()
+            }
+        })
+
+        enterContentOnCreate.addTextChangedListener(object: TextWatcher{
+            override fun afterTextChanged(s: Editable?) {
+                if (enterTitleOnCreate.text.isEmpty()) createBtn.isEnabled = false
 
             }
 
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-
+                createBtn.isEnabled = false
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                createBtn.isEnabled = s.toString().trim() != ""
+                createBtn.isEnabled = !s.isNullOrBlank()
             }
         })
+
 
         createBtn.setOnClickListener {
             val title = findViewById<EditText>(

@@ -25,12 +25,13 @@ class ViewToDoActivity : AppCompatActivity() {
 
         val viewUpdateBtn = findViewById<Button>(R.id.viewUpdateBtn)
         val viewDeleteBtn = findViewById<Button>(R.id.viewDeleteBtn)
+
         viewDeleteBtn.setOnClickListener {
             AlertDialog.Builder(this)
-                .setTitle("Delete ToDo")
-                .setMessage("Do you really want to delete it?")
+                .setTitle(R.string.app_name)
+                .setMessage(R.string.dialog_message)
                 .setPositiveButton(
-                    "Yes"
+                    R.string.dialog_positive
                 ) { dialog, whichButton ->
                     // Delete it.
                     toDoRepository.deleteToDoById(theId)
@@ -38,7 +39,7 @@ class ViewToDoActivity : AppCompatActivity() {
                     finish()
                     startActivity(intent)
                 }.setNegativeButton(
-                    "No"
+                    R.string.dialog_negative
                 ) { dialog, whichButton ->
                     // Do not delete it.
                     val intent = Intent(this,UpdateToDoActivity::class.java)

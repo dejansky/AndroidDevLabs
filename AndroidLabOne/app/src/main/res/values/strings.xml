@@ -1,6 +1,17 @@
 <resources>
     <string name="app_name">AndroidLabOne</string>
-    <string name="titleTextView">Title 1</string>
-    <string name="createBtn">Create</string>
-    <string name="title_activity_view_to_do">ViewToDoActivity</string>
+    <string name="create_button_sting">Create</string>
+    <string name="save_button_string">Save</string>
+    <string name="update_button_string">Update</string>
+    <string name="delete_button_string">Delete</string>
+    <string name="title_create_string">Title</string>
+    <string name="content_create_string">Content</string>
+    <string name="title_hint_string">Enter title</string>
+    <string name="content_hint_string">Enter content</string>
+    <string name="dialog_title">Delete</string>
+    <string name="dialog_positive">Yes</string>
+    <string name="dialog_negative">No</string>
+    <string name="dialog_message">Do you really want to delete it?</string>
+
+
 </resources>
